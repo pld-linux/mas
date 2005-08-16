@@ -1,0 +1,12 @@
+diff -urN mas-0.6.0/config/site.def mas-0.6.0-patched/config/site.def
+--- mas-0.6.0/config/site.def	2002-03-14 17:17:08.000000000 +0100
++++ mas-0.6.0-patched/config/site.def	2005-02-05 21:05:02.202803360 +0100
+@@ -67,7 +67,7 @@
+ #ifdef AfterVendorCF
+ 
+ #ifndef ProjectRoot
+-#define ProjectRoot /usr/local/mas
++#define ProjectRoot /usr
+ #endif
+ 
+ /* Only set HasXdmAuth to YES if you have a Wraphelp.c file. */

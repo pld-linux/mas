@@ -1,0 +1,18 @@
+--- clients/util/mas-launch.sh-dist	2003-09-11 15:32:43.000000000 +0200
++++ clients/util/mas-launch.sh	2003-09-11 15:34:54.000000000 +0200
+@@ -1,11 +1,12 @@
+ #!/bin/sh
+ 
+-PREFIX=/usr/local/mas
+-LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PREFIX}/lib
++PREFIX=/usr
++# LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PREFIX}/lib
+ MAS_PATH=${PREFIX}/lib/mas
+ MAS=${PREFIX}/bin/mas
+ MAS_WD=${PREFIX}/bin/maswatchdog
+-LOG=${PREFIX}/mas-1.log
++LOG=/var/tmp/mas-1.log
++test -f $LOG && rm -f $LOG
+ 
+ # kill esound if it's running -- we can't coexist.
+ pkill esd

@@ -1,0 +1,19 @@
+diff -urN mas-0.6.3/common/mas_endian.h mas-0.6.3-patched/common/mas_endian.h
+--- mas-0.6.3/common/mas_endian.h	2003-01-22 14:26:17.000000000 +0100
++++ mas-0.6.3-patched/common/mas_endian.h	2005-02-06 14:11:03.236835216 +0100
+@@ -160,12 +160,12 @@
+ 
+ /** Use faster system byte swapping functions if available */
+ #ifdef linux
+-#include <asm/byteorder.h>
++#include <byteswap.h>
+ #ifdef __arch__swab16
+-#define mas_swap16  __arch__swab16
++#define mas_swap16  bswap_16
+ #endif
+ #ifdef __arch__swab32
+-#define mas_swap32  __arch__swab32
++#define mas_swap32  bswap_32
+ #endif
+ #endif
+ 

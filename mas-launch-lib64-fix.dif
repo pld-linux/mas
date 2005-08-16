@@ -1,0 +1,11 @@
+--- clients/util/mas-launch.sh	2003-09-11 15:37:23.000000000 +0200
++++ clients/util/mas-launch.sh	2003-09-11 15:37:37.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ PREFIX=/usr
+ # LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PREFIX}/lib
+-MAS_PATH=${PREFIX}/lib/mas
++MAS_PATH=${PREFIX}/lib64/mas
+ MAS=${PREFIX}/bin/mas
+ MAS_WD=${PREFIX}/bin/maswatchdog
+ LOG=/var/tmp/mas-1.log

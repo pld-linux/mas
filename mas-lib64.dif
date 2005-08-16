@@ -1,0 +1,54 @@
+--- config/mas.rules-dist	2003-07-28 16:22:24.502137080 +0200
++++ config/mas.rules	2003-07-28 16:23:51.563901680 +0200
+@@ -33,7 +33,7 @@
+ #endif
+ 
+ #ifdef MASProjectRoot
+-# define XUsrLibDirPath	$(USRLIBDIR):$(MASPROJECTROOT)/lib
++# define XUsrLibDirPath	$(USRLIBDIR):$(MASPROJECTROOT)/lib64
+ #else
+ # define XUsrLibDirPath	$(USRLIBDIR)
+ #endif
+@@ -45,7 +45,7 @@
+ #if ImportMAS
+ # define XLdPreLibs	-L$(LIBSRC)
+ #elif defined(UseInstalledMAS) && defined(MASProjectRoot)
+-# define XLdPreLibs	-L$(MASPROJECTROOT)/lib
++# define XLdPreLibs	-L$(MASPROJECTROOT)/lib64
+ #else
+ # define XLdPreLibs	/**/
+ #endif
+@@ -55,7 +55,7 @@
+ #define LdPreLibs	LdPreLib XLdPreLibs
+ 
+ #ifdef MASProjectRoot
+-# define XLdPostLibs	-L$(MASPROJECTROOT)/lib
++# define XLdPostLibs	-L$(MASPROJECTROOT)/lib64
+ #else
+ # define XLdPostLibs	/**/
+ #endif
+@@ -77,11 +77,11 @@
+ #define TopIncludes	TopInclude $(TOP_X_INCLUDES)
+ 
+ #if UseInstalledMAS && defined(MASProjectRoot)
+-# define X11BuildLibPath	$(MASPROJECTROOT)/lib
++# define X11BuildLibPath	$(MASPROJECTROOT)/lib64
+ #elif UseInstalledMAS
+ # define X11BuildLibPath	$(USRLIBDIR)
+ #elif ImportMAS
+-# define X11BuildLibPath	$(MASTOP)/lib
++# define X11BuildLibPath	$(MASTOP)/lib64
+ #else
+ # define X11BuildLibPath	$(TOP)/exports/lib
+ #endif
+--- devices/visual/Imakefile	2003/08/13 00:59:19	1.1
++++ devices/visual/Imakefile	2003/08/13 00:59:35
+@@ -16,7 +16,7 @@
+ #endif
+ 
+ #ifdef LinuxArchitecture
+-ARCHREQUIREDLIBS = -L/usr/X11R6/lib 
++ARCHREQUIREDLIBS = -L/usr/X11R6/lib64
+ #endif
+ 
+ #ifdef SunArchitecture

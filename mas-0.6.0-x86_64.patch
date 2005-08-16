@@ -1,0 +1,74 @@
+--- config/Imake.cf
++++ config/Imake.cf
+@@ -418,6 +418,7 @@
+ # ifdef i386
+ #  define i386Architecture
+ #  undef i386
++# endif
+ # ifdef __i386__
+ #  ifndef i386Architecture
+ #   define i386Architecture
+@@ -428,7 +429,16 @@
+ #  define AlphaArchitecture
+ #  undef __alpha
+ # endif /* __alpha */
+-#endif
++# if defined(__x86_64__)
++#  undef __x86_64__
++#  define x86_64Architecture
++# endif
++# if defined(x86_64__)
++#  undef x86_64__
++#  ifndef x86_64Architecture
++#   define x86_64Architecture
++#  endif
++# endif
+ #endif /* linux */
+ 
+ #ifdef __uxp__
+--- config/linux.cf
++++ config/linux.cf
+@@ -195,6 +195,15 @@
+ #endif
+ #endif /* i386Architecture */
+ 
++#ifdef x86_64Architecture
++# ifndef OptimizedCDebugFlags
++#  define OptimizedCDebugFlags  DefaultGcc2x86_64Opt
++# endif
++# define LinuxMachineDefines   -D__x86_64__
++# define ServerOSDefines        XFree86ServerOSDefines -DDDXTIME -DPART_NET
++# define ServerExtraDefines     -DGCCUSESGAS XFree86ServerDefines -D_XSERVER64
++#endif /* x86_64Architecture */
++
+ #ifdef AlphaArchitecture
+ #define OptimizedCDebugFlags	-O2
+ #define LinuxMachineDefines	-D__alpha__
+--- config/mas.tmpl
++++ config/mas.tmpl
+@@ -52,6 +52,10 @@
+ MAS_ENDIANNESS = MAS_LITTLE_ENDIAN
+ #define MAS_WE_ARE_LITTLE_ENDIAN
+ 
++#elif defined(x86_64Architecture)
++MAS_ENDIANNESS = MAS_LITTLE_ENDIAN
++#define MAS_WE_ARE_LITTLE_ENDIAN
++
+ #elif defined(ia64Architecture)
+ MAS_ENDIANNESS = MAS_LITTLE_ENDIAN
+ #define MAS_WE_ARE_LITTLE_ENDIAN
+--- config/xfree86.cf
++++ config/xfree86.cf
+@@ -584,6 +584,12 @@
+ #endif
+ #endif
+ 
++#if HasGcc2 && defined(x86_64Architecture)
++# ifndef DefaultGcc2x86_64Opt
++#  define DefaultGcc2x86_64Opt -O2 -fno-strength-reduce
++# endif
++#endif
++
+ #ifndef BuildLBXCompatible
+ #define BuildLBXCompatible NO
+ #endif

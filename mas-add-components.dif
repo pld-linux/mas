@@ -1,0 +1,12 @@
+diff -urN mas-0.6.3/Imakefile mas-0.6.3-patched/Imakefile
+--- mas-0.6.3/Imakefile	2004-06-15 00:42:49.000000000 +0200
++++ mas-0.6.3-patched/Imakefile	2005-02-06 13:47:54.959885392 +0100
+@@ -2,7 +2,7 @@
+ #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+ 
+ # The build order is important.  
+-SUBDIRS = config share common jrtplib mas devices maslib miscgtk clients 
++SUBDIRS = config share common jrtplib mas devices maslib miscgtk clients devtools control-apps
+ 
+ #ifndef OSName
+ #define OSName Unknown Operating System!
