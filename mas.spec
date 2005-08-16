@@ -23,9 +23,9 @@ Patch6:		%{name}-launch-lib64-fix.dif
 Patch7:		%{name}-%{version}-logdir.patch.bz2
 Patch8:		%{name}-0.6.2-fftw.patch.bz2
 URL:		http://www.mediaapplicationserver.net/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	gtk+2-devel
 BuildRequires:	pkgconfig
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 MAS (Media Application Server) is a multi-platform sound client/server
@@ -73,9 +73,17 @@ mv mas-config.tmp mas-config
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT MANPATH=%{_manpath} LIBDIR=%{_libdir} USRLIBDIR=%{_libdir} install
-%{__make} DESTDIR=$RPM_BUILD_ROOT MANPATH=%{_manpath} install.man
-install -d $RPM_BUILD_ROOT/var/log/mas/
+install -d $RPM_BUILD_ROOT/var/log/mas
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	MANPATH=%{_manpath} \
+	LIBDIR=%{_libdir} \
+	USRLIBDIR=%{_libdir}
+
+%{__make} install.man \
+	DESTDIR=$RPM_BUILD_ROOT \
+	MANPATH=%{_manpath}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -92,9 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*
 %{_libdir}/mas
-%{_datadir}/applications/*.desktop
-%{_datadir}/pixmaps/*.png
-%dir /var/log/mas/
+%{_desktopdir}/*.desktop
+%{_pixmapsdir}/*.png
+%dir /var/log/mas
 
 %files devel
 %defattr(644,root,root,755)
