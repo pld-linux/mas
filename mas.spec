@@ -1,5 +1,5 @@
 Summary:	The Media Application Server(TM)
-Summary(pl):	Media Application Server - system d¼wiêku o architekturze klient-serwer
+Summary(pl.UTF-8):   Media Application Server - system dÅºwiÄ™ku o architekturze klient-serwer
 Name:		mas
 Version:	0.6.3
 Release:	1
@@ -34,16 +34,16 @@ system. MAS supports the desktop and, transparently, the network. In
 particular, MAS will provide complete support for the X Window System,
 across the network. Run the mas server as root with mas-launch.
 
-%description -l pl
-MAS (Medai Application Server) to wieloplatformowy system d¼wiêku o
-architekturze klient-serwer. MAS obs³uguje pulpit i, w sposób
-przezroczysty, sieæ. W szczególno¶ci MAS dostarcza pe³ne wsparcie dla
-X Window System po sieci. Serwer mas nale¿y uruchomiæ jako root
+%description -l pl.UTF-8
+MAS (Medai Application Server) to wieloplatformowy system dÅºwiÄ™ku o
+architekturze klient-serwer. MAS obsÅ‚uguje pulpit i, w sposÃ³b
+przezroczysty, sieÄ‡. W szczegÃ³lnoÅ›ci MAS dostarcza peÅ‚ne wsparcie dla
+X Window System po sieci. Serwer mas naleÅ¼y uruchomiÄ‡ jako root
 poprzez mas-launch.
 
 %package devel
 Summary:	MAS development package
-Summary(pl):	Pakiet programistyczny MAS
+Summary(pl.UTF-8):   Pakiet programistyczny MAS
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glibc-devel
@@ -52,9 +52,9 @@ Requires:	glibc-devel
 This package contains the files needed to compile programs that use
 the MAS.
 
-%description devel -l pl
-Ten pakiet zawiera pliki potrzebne do kompilowania programów
-u¿ywajacych MAS-a.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki potrzebne do kompilowania programÃ³w
+uÅ¼ywajacych MAS-a.
 
 %prep
 %setup -q -a 1 -a 2
