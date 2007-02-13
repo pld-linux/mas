@@ -1,5 +1,5 @@
 Summary:	The Media Application Server(TM)
-Summary(pl.UTF-8):   Media Application Server - system dźwięku o architekturze klient-serwer
+Summary(pl.UTF-8):	Media Application Server - system dźwięku o architekturze klient-serwer
 Name:		mas
 Version:	0.6.3
 Release:	1
@@ -43,7 +43,7 @@ poprzez mas-launch.
 
 %package devel
 Summary:	MAS development package
-Summary(pl.UTF-8):   Pakiet programistyczny MAS
+Summary(pl.UTF-8):	Pakiet programistyczny MAS
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glibc-devel
