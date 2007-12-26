@@ -2,5 +2,4 @@
 Type=Application
 Exec=masconf_gui
 Name=MAS Sound System Configuration
-Icon=M_25px_icon.png
-
+Icon=M_25px_icon
