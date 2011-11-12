@@ -1,0 +1,24 @@
+--- mas-0.6.3/config/mas.tmpl.logdir	2004-06-14 23:35:36.000000000 +0200
++++ mas-0.6.3/config/mas.tmpl	2004-08-24 15:41:23.993242409 +0200
+@@ -704,20 +704,7 @@
+ #ifndef RCDir
+ #define RCDir $(SHAREDIR)/rc
+ #endif
+-#ifndef LogDir
+-#ifdef ProjectRoot
+-#if UsesSeparateInstallHierarchy
+-#define LogDir Concat(ProjectRoot,/log)
+-/* does sth like this belong in this file? */
+-install:: 
+-	MakeDir(LogDir)
+-#else
+-#define LogDir /var/log
+-#endif
+-#else
+-#define LogDir /var/log
+-#endif
+-#endif
++#define LogDir /var/log/mas
+ #ifndef RunDir 
+ #ifdef ProjectRoot
+ #define RunDir Concat(ProjectRoot,/run)

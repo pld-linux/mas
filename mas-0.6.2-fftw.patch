@@ -1,0 +1,12 @@
+--- mas-0.6.2/config/host.def~	2003-06-26 22:58:00.000000000 +0200
++++ mas-0.6.2/config/host.def	2003-11-20 12:19:43.000000000 +0100
+@@ -10,8 +10,7 @@
+ #define HasGtk NO
+ #define HasGtk2 YES
+ #define HasGnome2 YES
+-#define HasFFTW NO
+-
++#define HasFFTW YES
+ #define HasMAD YES
+ 
+ #define HasLibstdcplusplus YES

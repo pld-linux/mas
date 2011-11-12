@@ -21,8 +21,8 @@ Patch3:		%{name}-lib64.dif
 Patch4:		%{name}-0.6.0-x86_64.patch
 Patch5:		%{name}-launch-fix.dif
 Patch6:		%{name}-launch-lib64-fix.dif
-Patch7:		%{name}-%{version}-logdir.patch.bz2
-Patch8:		%{name}-0.6.2-fftw.patch.bz2
+Patch7:		%{name}-%{version}-logdir.patch
+Patch8:		%{name}-0.6.2-fftw.patch
 URL:		http://www.mediaapplicationserver.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	pkgconfig
