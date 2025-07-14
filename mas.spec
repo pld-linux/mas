@@ -58,9 +58,9 @@ używajacych MAS-a.
 
 %prep
 %setup -q -a 1 -a 2
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 #if [ "%_lib" == "lib64" ]; then
 #%patch3
 #fi
@@ -69,8 +69,8 @@ używajacych MAS-a.
 #if [ "%_lib" == "lib64" ]; then
 #%patch6
 #fi
-%patch7 -p1
-%patch8 -p1
+%patch -P7 -p1
+%patch -P8 -p1
 
 
 %build
