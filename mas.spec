@@ -62,12 +62,12 @@ używajacych MAS-a.
 %patch -P1 -p1
 %patch -P2 -p1
 #if [ "%_lib" == "lib64" ]; then
-#%patch3
+#%%patch3
 #fi
-#%patch4
-#%patch5
+#%%patch4
+#%%patch5
 #if [ "%_lib" == "lib64" ]; then
-#%patch6
+#%%patch6
 #fi
 %patch -P7 -p1
 %patch -P8 -p1
